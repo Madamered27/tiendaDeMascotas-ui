@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="container mt-4 text-center">
+  <h1>Productos faltantes de stock</h1>
+  <hr>
+  <p>Necesitamos reponer el stock de los siguientes juguetes para mascotas</p>
+  <p class="small" >(el stock se repone cuando hay 5 unidades o menos)</p>
+  <div class="row gy-3">
+    <div
+      *ngFor="let producto of listProductos"
+      class="col-lg-3 d-flex align-items-stretch">
+      <app-card-producto [producto]="producto"></app-card-producto>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,16 @@
+
+  <div class="d-flex flex-row-reverse">
+    <div class="p-2">
+      <button class="btn btn-outline-success " type="button" (click)="buscarPorCategoria(buscarCategoria.value)">Buscar</button>
+    </div>
+    <div class="p-2">
+      <input class="form-control mr-sm-2" type="search" placeholder="Ingrese una categoria" aria-label="Search" #buscarCategoria (keyup.enter)="buscarPorCategoria(buscarCategoria.value)">
+    </div>
+  </div>
+
+
+
+<label for="categoria">Filtro categoria</label>
+<select name="categoria" id="categoria" class="form-control mr-sm-2" (change)="buscarPorCategoriaSelected()" [(ngModel)]="selectedCategoria">
+  <option *ngFor="let categoria of listCategorias" [value]="categoria">{{categoria}}</option>
+</select>

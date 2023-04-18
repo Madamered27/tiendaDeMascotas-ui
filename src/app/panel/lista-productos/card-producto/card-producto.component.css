@@ -1,0 +1,18 @@
+button{
+  transition: 0.7s;
+}
+
+button:hover{
+  transform: translateY(-10px);
+}
+
+.zoom:hover{
+  transform: scale(1.1);
+  transition: 0.7s;
+  z-index: 1;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.372);
+}
+
+.zoom{
+  transition: 0.7s;
+}

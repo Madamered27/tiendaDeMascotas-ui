@@ -1,0 +1,78 @@
+p{
+  margin-bottom: -1.2rem;
+  font-size: 60px;
+  color:  #ACCFCB;
+  font-family: 'Prompt', sans-serif;
+  font-family: 'Permanent Marker', cursive;
+}
+
+hr{
+  border-color: black;
+  border-width: 3px;
+  margin-bottom: -0.1rem;
+}
+
+form{
+  margin-bottom: -3rem;
+}
+
+.layout{
+  background: url(../../assets/img/img2.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 93vh;
+}
+
+button{
+  transition: 0.3s;
+}
+
+button:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+input{
+  box-shadow: 1px 2px 10px 0px rgba(26, 25, 25, 0.423);
+}
+
+.title-word {
+  animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #eccc85;
+  --color-2: #ACCFCB;
+  --color-3: #f2b26e;
+
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #c5abdd;
+
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+

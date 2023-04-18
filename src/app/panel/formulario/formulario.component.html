@@ -1,0 +1,102 @@
+<div
+  *ngIf="isMensajeMostrado"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Excelentes noticias!</strong> El producto se agrego correctamente.
+  <button
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+    (click)="eliminarMensaje()"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form
+  class="form-group container"
+  autocomplete="off"
+  [formGroup]="miFormulario"
+  (ngSubmit)="agregar()"
+  enctype="multipart/form-data"
+>
+  <div>
+    <label for="nombre">Nombre</label>
+    <input
+      class="form-control"
+      type="text"
+      name="nombre"
+      id="nombre"
+      placeholder="Nombre del producto"
+      formControlName="nombre"
+    />
+  </div>
+
+  <div>
+    <label for="nombre">Precio</label>
+    <input
+      class="form-control"
+      type="number"
+      name="precio"
+      id="precio"
+      formControlName="precio"
+    />
+  </div>
+
+  <div>
+    <label for="categoria">Categoria</label>
+    <select
+      name="categoria"
+      id="categoria"
+      class="form-control"
+      formControlName="categoria"
+    >
+      <option *ngFor="let categoria of listCategorias" [value]="categoria">
+        {{ categoria }}
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <label for="stock">Stock</label>
+    <input
+      class="form-control"
+      type="number"
+      name="stock"
+      id="stock"
+      formControlName="stock"
+    />
+  </div>
+
+  <!-- <div>
+    <label for="nombre">Imagen</label>
+    <input
+      class="form-control"
+      type="text"
+      name="img"
+      id="img"
+      placeholder="Ej: imagen.jpg"
+      formControlName="img"
+    />
+  </div> -->
+
+  <div>
+    <label for="nombre">Imagen</label>
+    <input
+      class="form-control"
+      type="file"
+      name="img"
+      id="img"
+      formControlName="img"
+      (change)="onArchivoSeleccionado($event)"
+    />
+  </div>
+  <div>
+    <button class="btn btn-warning mt-4 w-100" type="submit">
+      Agregar Producto
+    </button>
+    <button class="btn btn-outline-primary mt-5 w-30 slow" routerLink="/productos">Volver a lista de productos</button>
+  </div>
+</form>

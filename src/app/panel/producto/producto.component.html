@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <app-spinner *ngIf="isCargando"></app-spinner>
+
+  <div class="row" *ngIf="!isCargando">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card animated fadeIn" style="width: 25rem; margin: 0 auto">
+        <img [src]="img"  class="card-img-top img-thumbnail" />
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ nombre }}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Precio: ${{ precio }}</li>
+            <li class="list-group-item">Categoria: {{ categoria }}</li>
+            <li class="list-group-item">Stock: {{ stock }}</li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="row mt-3 mb-3">
+            <div
+            *ngIf="isMensajeMostrado"
+            class="alert alert-danger alert-dismissible fade show"
+            role="alert"
+            >
+            <strong>Malas noticias!</strong> Stock insuficiente, ingrese una cantidad menor
+            <button
+            type="button"
+            class="close cancelar"
+            data-dismiss="alert"
+            aria-label="Close"
+            (click)="eliminarMensaje()"
+            >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div
+        *ngIf="isMensajeCantidadCero"
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        >
+        <strong>Error!</strong> La cantidad debe ser mayor a 0
+        <button
+        type="button"
+        class="close cancelar"
+        data-dismiss="alert"
+        aria-label="Close"
+        (click)="eliminarMensaje()"
+        >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="col-6">
+          <button
+          class="btn btn-success mt-4"
+          (click)="agregarAlCarrito(cantidad.value)"
+          >
+          Agregar al carrito
+        </button>
+        </div>
+        <div class="col-6">
+          <span>Ingrese cantidad:</span>
+          <input type="number" class="form-control" #cantidad value="0" />
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-outline-primary slow m-2" routerLink="/productos">
+    Volver a lista de productos
+  </button>
+
+
+
+</div>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

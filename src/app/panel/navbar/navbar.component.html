@@ -1,0 +1,31 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <p class="navbar-brand m-2">Tienda de mascotas - Puppis</p>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/panel">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/productos">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/stock">Consultar stock faltante</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/agregarProducto">Agregar nuevo producto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/nosotros">Nosotros</a>
+        </li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-light m-2" routerLink="/carrito"><i class="bi bi-cart4"></i></button>
+    <button type="button" class="btn btn-light m-3" (click)="logOut()">Cerrar sesion</button>
+  </div>
+
+</nav>

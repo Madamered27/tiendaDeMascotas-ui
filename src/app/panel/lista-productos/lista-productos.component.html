@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="container mt-4 text-center">
+  <app-spinner *ngIf="isCargando"></app-spinner>
+  <h1>Nuestros productos</h1>
+  <hr>
+  <div class="row gy-3">
+    <div class="mb-4">
+      <app-buscador (onBuscarPorCategoria)="filtrarPorCategoria($event)"></app-buscador>
+    </div>
+    <div *ngFor="let producto of listProductos" class="col-lg-3 d-flex align-items-stretch">
+      <app-card-producto [producto]="producto" (onEliminar)="eliminarCard($event)"></app-card-producto>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

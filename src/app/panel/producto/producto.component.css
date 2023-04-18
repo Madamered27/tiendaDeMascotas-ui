@@ -1,0 +1,7 @@
+.cancelar{
+  transform: scale(0.65);
+}
+
+.slow{
+  transition: 0.7s;
+}
